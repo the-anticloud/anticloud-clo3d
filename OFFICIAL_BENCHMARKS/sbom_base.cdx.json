@@ -1,0 +1,38 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:479f3112-8b7c-5744-8be6-94cb716350ba",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T15:33:42Z",
+    "component": {
+      "type": "application",
+      "name": "CLO3D",
+      "version": "d3abad79b5be",
+      "bom-ref": "pkg:generic/anticloud/CLO3D@d3abad79b5be",
+      "purl": "pkg:generic/anticloud/CLO3D@d3abad79b5be",
+      "licenses": [
+        {
+          "license": {
+            "id": "AGPL-3.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "d3abad79b5be1e46cb3abff6f29f875abe94820c"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/clo3d/libigl"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": []
+}

@@ -1,0 +1,759 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "CLO3D",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CLOTHING_MANUFACTURING\\CLO3D\\UPSTREAM_CLONE",
+    "git": {
+      "head": "d3abad79b5be1e46cb3abff6f29f875abe94820c",
+      "url": "https://github.com/clo3d/libigl",
+      "branch": "main",
+      "committed_at": "2026-09-02T16:07:12+09:00"
+    }
+  },
+  "metrics": {
+    "files_total": 941,
+    "source_files_scanned": 936,
+    "lines_of_code": 101604,
+    "languages": {
+      ".h": 478,
+      ".cpp": 452,
+      ".hpp": 5,
+      "(none)": 2,
+      ".txt": 2,
+      ".c": 1,
+      ".md": 1
+    }
+  },
+  "licence": {
+    "spdx": "AGPL-3.0",
+    "class": "B",
+    "source_file": "LICENSE",
+    "redistribution_allowed": false
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 924,
+    "files_with_findings": 839,
+    "severity": {
+      "high": 64,
+      "medium": 7,
+      "low": 853
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 6,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "blue_noise.cpp",
+            "line": 375,
+            "cwe": "CWE-338",
+            "snippet": "template void igl::blue_noise<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<int, -1, -1, 0, -1, -1>, Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<int, -1, 1, 0"
+          },
+          {
+            "severity": "medium",
+            "file": "generate_default_urbg.h",
+            "line": 6,
+            "cwe": "CWE-338",
+            "snippet": "using DEFAULT_URBG = std::mt19937;"
+          },
+          {
+            "severity": "medium",
+            "file": "random_points_on_mesh.cpp",
+            "line": 52,
+            "cwe": "CWE-338",
+            "snippet": "template void igl::random_points_on_mesh<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<int, -1, -1, 0, -1, -1>, Eigen::Matrix<double, -1, 3, 1, -1, 3>, Eigen::Matrix<int,"
+          },
+          {
+            "severity": "medium",
+            "file": "random_points_on_mesh_intrinsic.cpp",
+            "line": 92,
+            "cwe": "CWE-338",
+            "snippet": "template void igl::random_points_on_mesh_intrinsic<Eigen::Matrix<double, -1, 1, 0, -1, 1>, Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<int, -1, 1, 0, -1, 1>, std::mt199"
+          },
+          {
+            "severity": "medium",
+            "file": "randperm.cpp",
+            "line": 29,
+            "cwe": "CWE-338",
+            "snippet": "template void igl::randperm<Eigen::Matrix<int, -1, -1, 0, -1, -1>, std::mt19937_64&>(int, Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >&, std::mt19937_64&);"
+          },
+          {
+            "severity": "medium",
+            "file": "uniformly_sample_two_manifold.cpp",
+            "line": 15,
+            "cwe": "CWE-338",
+            "snippet": "//#include \"MT19937.h\""
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 65,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "active_set.cpp",
+            "line": 234,
+            "cwe": "CWE-95",
+            "snippet": "//cout<<matlab_format((known_i.array()+1).eval(),\"known_i\")<<endl;"
+          },
+          {
+            "severity": "high",
+            "file": "ambient_occlusion.cpp",
+            "line": 88,
+            "cwe": "CWE-95",
+            "snippet": "s  .cast<typename DerivedV::Scalar>().eval(),"
+          },
+          {
+            "severity": "high",
+            "file": "arap.cpp",
+            "line": 103,
+            "cwe": "CWE-95",
+            "snippet": "data.CSM = (data.CSM * ref_map_dim.transpose()).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "arap_dof.cpp",
+            "line": 172,
+            "cwe": "CWE-95",
+            "snippet": "CSM = (G_sum_dim * CSM).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "bezier.cpp",
+            "line": 29,
+            "cwe": "CWE-95",
+            "snippet": "Vtemp.row(j) = ((1.0 - t) * Vtemp.row(j) + t * Vtemp.row(j+1)).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "bfs_orient.cpp",
+            "line": 83,
+            "cwe": "CWE-95",
+            "snippet": "FF.row(n) = FF.row(n).reverse().eval();"
+          },
+          {
+            "severity": "high",
+            "file": "biharmonic_coordinates.cpp",
+            "line": 85,
+            "cwe": "CWE-95",
+            "snippet": "N = (Z*N).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "blue_noise.cpp",
+            "line": 293,
+            "cwe": "CWE-95",
+            "snippet": "X = X(I,Eigen::all).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "box_surface_area.cpp",
+            "line": 10,
+            "cwe": "CWE-95",
+            "snippet": "const auto dimensions = (max_corner - min_corner).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "Camera.h",
+            "line": 194,
+            "cwe": "CWE-95",
+            "snippet": "P = P.transpose().eval();"
+          },
+          {
+            "severity": "high",
+            "file": "decimate.cpp",
+            "line": 87,
+            "cwe": "CWE-95",
+            "snippet": "G = G(igl::find(keep),Eigen::all).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "directed_edge_parents.cpp",
+            "line": 24,
+            "cwe": "CWE-95",
+            "snippet": "I(E.col(1).eval()) = colon<typename DerivedE::Scalar>(0, E.rows()-1);"
+          },
+          {
+            "severity": "high",
+            "file": "doublearea.cpp",
+            "line": 61,
+            "cwe": "CWE-95",
+            "snippet": "dblA = dblA.array().sqrt().eval();"
+          },
+          {
+            "severity": "high",
+            "file": "ears.cpp",
+            "line": 22,
+            "cwe": "CWE-95",
+            "snippet": "find((B.rowwise().count() == 2).eval(), ear);"
+          },
+          {
+            "severity": "high",
+            "file": "edges_to_path.cpp",
+            "line": 61,
+            "cwe": "CWE-95",
+            "snippet": "DerivedE E = Eigen::Map<DerivedE>(vE.data(),OE.rows(),OE.cols()).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "edge_lengths.cpp",
+            "line": 18,
+            "cwe": "CWE-95",
+            "snippet": "L=L.array().sqrt().eval();"
+          },
+          {
+            "severity": "high",
+            "file": "eigs.cpp",
+            "line": 72,
+            "cwe": "CWE-95",
+            "snippet": "y = (y - u*u.dot(B*y)/u.dot(B * u)).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "exploded_view.cpp",
+            "line": 42,
+            "cwe": "CWE-95",
+            "snippet": "const auto tbc = ((BC.row(i)-c)*t+c).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "faces_first.h",
+            "line": 37,
+            "cwe": "CWE-95",
+            "snippet": "///     &IM)).eval();"
+          },
+          {
+            "severity": "high",
+            "file": "fast_winding_number.cpp",
+            "line": 298,
+            "cwe": "CWE-95",
+            "snippet": "WN(iter) = helper(Q.row(iter).eval(),near_indices_start);"
+          },
+          {
+            "severity": "high",
+            "file": "file_dialog_open.cpp",
+            "line": 29,
+            "cwe": "CWE-78",
+            "snippet": "FILE * output = popen("
+          },
+          {
+            "severity": "high",
+            "file": "file_dialog_save.cpp",
+            "line": 29,
+            "cwe": "CWE-78",
+            "snippet": "FILE * output = popen("
+          },
+          {
+            "severity": "high",
+            "file": "fit_cubic_bezier.cpp",
+            "line": 57,
+            "cwe": "CWE-95",
+            "snippet": "tHat1 = (tHat1 - tHat2).eval().normalized();"
+          },
+          {
+            "severity": "high",
+            "file": "fit_rotations.cpp",
+            "line": 61,
+            "cwe": "CWE-95",
+            "snippet": "//cout<<matlab_format(ri.transpose().eval(),C_STR(\"ri_\"<<r))<<endl;"
+          },
+          {
+            "severity": "high",
+            "file": "harmonic.cpp",
+            "line": 138,
+            "cwe": "CWE-95",
+            "snippet": "Q = (Q*Mi*-L).eval();"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 30,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "AABB.cpp",
+            "line": 74,
+            "cwe": "CWE-",
+            "snippet": "// Hack for now to keep templates simple. If becomes bottleneck"
+          },
+          {
+            "severity": "low",
+            "file": "arap.cpp",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "using MatrixXX = Eigen::Matrix<Scalar, Eigen::Dynamic, Eigen::Dynamic>;"
+          },
+          {
+            "severity": "low",
+            "file": "arap_dof.cpp",
+            "line": 791,
+            "cwe": "CWE-",
+            "snippet": "// TODO: change fit_rotations_XXX so it returns R in the format ready for"
+          },
+          {
+            "severity": "low",
+            "file": "arap_dof.h",
+            "line": 183,
+            "cwe": "CWE-",
+            "snippet": "//Eigen::MatrixXd M_Solve; // TODO: remove from here"
+          },
+          {
+            "severity": "low",
+            "file": "bijective_composite_harmonic_mapping.cpp",
+            "line": 68,
+            "cwe": "CWE-",
+            "snippet": "// TODO: replace this with something that guarantees a homotopic \"morph\""
+          },
+          {
+            "severity": "low",
+            "file": "collapse_edge.cpp",
+            "line": 322,
+            "cwe": "CWE-",
+            "snippet": "// TODO: visits edges multiple times, ~150% more updates than should"
+          },
+          {
+            "severity": "low",
+            "file": "crouzeix_raviart_massmatrix.cpp",
+            "line": 45,
+            "cwe": "CWE-",
+            "snippet": "// Mesh should be edge-manifold (TODO: replace `is_edge_manifold` with"
+          },
+          {
+            "severity": "low",
+            "file": "FastWindingNumberForSoups.h",
+            "line": 4209,
+            "cwe": "CWE-",
+            "snippet": "/// FIXME: This is not fully implemented yet."
+          },
+          {
+            "severity": "low",
+            "file": "file_dialog_open.cpp",
+            "line": 28,
+            "cwe": "CWE-",
+            "snippet": "// For apple use applescript hack"
+          },
+          {
+            "severity": "low",
+            "file": "file_dialog_save.cpp",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "// For apple use applescript hack"
+          },
+          {
+            "severity": "low",
+            "file": "Hit.h",
+            "line": 16,
+            "cwe": "CWE-",
+            "snippet": "// TODO: template on floating point type"
+          },
+          {
+            "severity": "low",
+            "file": "line_field_mismatch.cpp",
+            "line": 60,
+            "cwe": "CWE-",
+            "snippet": "// TODO: this should be equivalent to the other code below, to check!"
+          },
+          {
+            "severity": "low",
+            "file": "MappingEnergyType.h",
+            "line": 14,
+            "cwe": "CWE-",
+            "snippet": "// Todo: Integrate with ARAPEnergyType"
+          },
+          {
+            "severity": "low",
+            "file": "matlab_format.cpp",
+            "line": 31,
+            "cwe": "CWE-",
+            "snippet": "// This seems like a bit of a hack since I would expect the rows to align"
+          },
+          {
+            "severity": "low",
+            "file": "min_quad_with_fixed.impl.h",
+            "line": 70,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: This is *NOT* generic and introduces a copy."
+          },
+          {
+            "severity": "low",
+            "file": "MshLoader.cpp",
+            "line": 296,
+            "cwe": "CWE-",
+            "snippet": "// TODO: make this work when m_data_size != sizeof(double) ?"
+          },
+          {
+            "severity": "low",
+            "file": "MshSaver.cpp",
+            "line": 100,
+            "cwe": "CWE-",
+            "snippet": "// TODO: sum up all lengths"
+          },
+          {
+            "severity": "low",
+            "file": "planarize_quad_mesh.cpp",
+            "line": 101,
+            "cwe": "CWE-",
+            "snippet": "// todo: this can be made faster by omitting the selector matrix"
+          },
+          {
+            "severity": "low",
+            "file": "point_simplex_squared_distance.cpp",
+            "line": 127,
+            "cwe": "CWE-",
+            "snippet": "// modulo is a HACK to handle points, segments and triangles. Because of"
+          },
+          {
+            "severity": "low",
+            "file": "pso.cpp",
+            "line": 118,
+            "cwe": "CWE-",
+            "snippet": "//        // TODO: I'm not sure this is the right thing to do/enough. The"
+          },
+          {
+            "severity": "low",
+            "file": "readNODE.cpp",
+            "line": 18,
+            "cwe": "CWE-",
+            "snippet": "// TODO: should be templated"
+          },
+          {
+            "severity": "low",
+            "file": "readPLY.cpp",
+            "line": 79,
+            "cwe": "CWE-",
+            "snippet": "// TODO: it's possible to optimize this , i suppose"
+          },
+          {
+            "severity": "low",
+            "file": "serialize.h",
+            "line": 19,
+            "cwe": "CWE-",
+            "snippet": "// TODOs:"
+          },
+          {
+            "severity": "low",
+            "file": "shapeup.cpp",
+            "line": 60,
+            "cwe": "CWE-",
+            "snippet": "//getting scale by edge length change average. TODO: by singular values"
+          },
+          {
+            "severity": "low",
+            "file": "signed_distance.cpp",
+            "line": 658,
+            "cwe": "CWE-",
+            "snippet": "// TODO: using .data() like this is very dangerous... This is assuming"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 823,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "AABB.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "AABB.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "accumarray.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "accumarray.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "active_set.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "active_set.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "adjacency_list.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "adjacency_list.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "adjacency_matrix.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "adjacency_matrix.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "all.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "all.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "all_pairs_distances.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "all_pairs_distances.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "ambient_occlusion.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "ambient_occlusion.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "angular_distance.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "angular_distance.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "any.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "any.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "any_of.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "any_of.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "arap.cpp",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "arap.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          },
+          {
+            "severity": "low",
+            "file": "ARAPEnergyType.h",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "// obtain one at http://mozilla.org/MPL/2.0/."
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 1,
+    "files_with_findings": 1,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "exact_geodesic.cpp",
+            "line": 1026,
+            "cwe": "CWE-",
+            "snippet": "assert(verify());"
+          }
+        ]
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:479f3112-8b7c-5744-8be6-94cb716350ba",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T15:33:42Z",
+      "component": {
+        "type": "application",
+        "name": "CLO3D",
+        "version": "d3abad79b5be",
+        "bom-ref": "pkg:generic/anticloud/CLO3D@d3abad79b5be",
+        "purl": "pkg:generic/anticloud/CLO3D@d3abad79b5be",
+        "licenses": [
+          {
+            "license": {
+              "id": "AGPL-3.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "d3abad79b5be1e46cb3abff6f29f875abe94820c"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/clo3d/libigl"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 9.13
+}
